@@ -319,6 +319,7 @@ const getProductById = async (id) => {
                 _id
                 text
                 date
+                updatedAt
                 user {
                   _id
                   firstName
