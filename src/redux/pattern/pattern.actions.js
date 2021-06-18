@@ -1,8 +1,4 @@
-import {
-  GET_PATTERNS,
-  SET_PATTERNS,
-  SET_PATTERN_LOADING
-} from './pattern.types';
+import { GET_PATTERNS, SET_PATTERNS, SET_PATTERN_LOADING } from './pattern.types';
 
 export const setPatterns = (payload) => ({
   type: SET_PATTERNS,

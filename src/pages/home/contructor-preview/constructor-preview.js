@@ -26,11 +26,7 @@ const ConstructorPreview = () => {
   }, [dispatch]);
 
   return (
-    <div
-      className={styles.constructorPreview}
-      id='constructor'
-      data-section-style='dark'
-    >
+    <div className={styles.constructorPreview} id='constructor' data-section-style='dark'>
       <ReactPlayer
         width='100%'
         height='100%'

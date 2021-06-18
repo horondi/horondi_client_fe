@@ -8,28 +8,17 @@ import { useStyles } from './editable-field.styles';
 import { commentFields, formRegExp, TEXT_VALUE } from '../../../../../configs';
 import { updateComment } from '../../../../../redux/comments/comments.actions';
 
-import {
-  TOOLTIPS,
-  PDP_BUTTONS
-} from '../../../../../translations/product-details.translations';
+import { TOOLTIPS, PDP_BUTTONS } from '../../../../../translations/product-details.translations';
 
-const EditableField = ({
-  setEditable,
-  text,
-  handleOpen,
-  commentId,
-  firstName
-}) => {
+const EditableField = ({ setEditable, text, handleOpen, commentId, firstName }) => {
   const styles = useStyles();
   const dispatch = useDispatch();
 
-  const { language, product, userData } = useSelector(
-    ({ Products, Language, User }) => ({
-      product: Products.product._id,
-      language: Language.language,
-      userData: User.userData
-    })
-  );
+  const { language, product, userData } = useSelector(({ Products, Language, User }) => ({
+    product: Products.product._id,
+    language: Language.language,
+    userData: User.userData
+  }));
 
   const { email, images } = userData;
 
@@ -78,24 +67,14 @@ const EditableField = ({
         name={TEXT_VALUE}
       />
       <div className={styles.editForm}>
-        <Button
-          className={styles.editButton}
-          onClick={setEditable.bind(this, false)}
-        >
+        <Button className={styles.editButton} onClick={setEditable(false)}>
           {PDP_BUTTONS[language].cancelButton}
         </Button>
-        <Button
-          type='submit'
-          className={styles.editButton}
-          onClick={setShouldValidate.bind(this, true)}
-        >
+        <Button type='submit' className={styles.editButton} onClick={setShouldValidate(true)}>
           {PDP_BUTTONS[language].submitButton}
         </Button>
         <Tooltip title={TOOLTIPS[language].delete} placement='right'>
-          <DeleteForeverIcon
-            className={styles.deleteIcon}
-            onClick={handleOpen}
-          />
+          <DeleteForeverIcon className={styles.deleteIcon} onClick={handleOpen} />
         </Tooltip>
       </div>
     </form>

@@ -11,9 +11,8 @@ const languageReducer = (state = initialState, action = {}) => {
       ...state,
       language: action.payload
     };
-  } else {
-    return state;
   }
+  return state;
 };
 
 export default languageReducer;

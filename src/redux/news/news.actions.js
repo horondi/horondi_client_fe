@@ -1,10 +1,4 @@
-import {
-  GET_NEWS,
-  SET_NEWS,
-  GET_NEWS_ARTICLE,
-  SET_NEWS_ARTICLE,
-  SET_LOADING
-} from './news.types';
+import { GET_NEWS, SET_NEWS, GET_NEWS_ARTICLE, SET_NEWS_ARTICLE, SET_LOADING } from './news.types';
 
 const setNews = (news) => ({
   type: SET_NEWS,

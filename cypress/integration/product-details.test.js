@@ -33,16 +33,12 @@ describe('Product details test', () => {
     cy.get('[data-cy="wishful"]')
       .click()
       .should(() => {
-        expect(
-          JSON.parse(localStorage.getItem('horondi')).wishlist
-        ).to.have.length(1);
+        expect(JSON.parse(localStorage.getItem('horondi')).wishlist).to.have.length(1);
       });
     cy.get('[data-cy="wishful"]')
       .click()
       .should(() => {
-        expect(
-          JSON.parse(localStorage.getItem('horondi')).wishlist
-        ).to.have.length(0);
+        expect(JSON.parse(localStorage.getItem('horondi')).wishlist).to.have.length(0);
       });
   });
 
@@ -51,9 +47,7 @@ describe('Product details test', () => {
     cy.contains('В кошик')
       .click()
       .should(() => {
-        expect(JSON.parse(localStorage.getItem('horondi')).cart).to.have.length(
-          1
-        );
+        expect(JSON.parse(localStorage.getItem('horondi')).cart).to.have.length(1);
       });
   });
 

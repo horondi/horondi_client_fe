@@ -3,11 +3,10 @@ describe('products tests', () => {
   it('products should be sorted by popularity', () => {
     cy.visit('/bags');
     cy.get('[data-cy=model-name]').click();
-    const products = () =>
-      cy.window().its('store').invoke('getState').its('Products');
-    cy.get(
-      '.MuiFormControl-root > .MuiInputBase-root > .MuiSelect-root'
-    ).select('популярністю', { log: true });
+    const products = () => cy.window().its('store').invoke('getState').its('Products');
+    cy.get('.MuiFormControl-root > .MuiInputBase-root > .MuiSelect-root').select('популярністю', {
+      log: true
+    });
     cy.wait(5000);
     products().its('sortByPopularity').should('be.equal', -1);
     products().its('sortByPrice').should('be.equal', 0);
@@ -22,11 +21,10 @@ describe('products tests', () => {
   it('products should be sorted by price ascending', () => {
     cy.visit('/bags');
     cy.get('[data-cy=model-name]').click();
-    const products = () =>
-      cy.window().its('store').invoke('getState').its('Products');
-    cy.get(
-      '.MuiFormControl-root > .MuiInputBase-root > .MuiSelect-root'
-    ).select('від дешевих до дорогих');
+    const products = () => cy.window().its('store').invoke('getState').its('Products');
+    cy.get('.MuiFormControl-root > .MuiInputBase-root > .MuiSelect-root').select(
+      'від дешевих до дорогих'
+    );
     cy.wait(5000);
     products().its('sortByPopularity').should('be.equal', 0);
     products().its('sortByPrice').should('be.equal', 1);
@@ -35,14 +33,11 @@ describe('products tests', () => {
       .its('products')
       .should(($products) => {
         expect($products[0].basePrice[0].value).to.be.equal(50000);
-        expect($products[$products.length - 1].basePrice[0].value).to.be.equal(
-          50000
-        );
+        expect($products[$products.length - 1].basePrice[0].value).to.be.equal(50000);
       });
   });
   it('products should be sorted by price descending', () => {
-    const products = () =>
-      cy.window().its('store').invoke('getState').its('Products');
+    const products = () => cy.window().its('store').invoke('getState').its('Products');
     cy.visit('/bags');
     cy.get('[data-cy=model-name]').click();
     cy.get(
@@ -56,19 +51,16 @@ describe('products tests', () => {
       .its('products')
       .should(($products) => {
         expect($products[0].basePrice[0].value).to.be.equal(50000);
-        expect($products[$products.length - 1].basePrice[0].value).to.be.equal(
-          50000
-        );
+        expect($products[$products.length - 1].basePrice[0].value).to.be.equal(50000);
       });
   });
   it('products should be sorted by rate descending', () => {
-    const products = () =>
-      cy.window().its('store').invoke('getState').its('Products');
+    const products = () => cy.window().its('store').invoke('getState').its('Products');
     cy.visit('/bags');
     cy.get('[data-cy=model-name]').click();
-    cy.get(
-      '.MuiFormControl-root > .MuiInputBase-root > .MuiSelect-root'
-    ).select('рейтингом', { log: true });
+    cy.get('.MuiFormControl-root > .MuiInputBase-root > .MuiSelect-root').select('рейтингом', {
+      log: true
+    });
     cy.wait(3000);
     products().its('sortByPopularity').should('be.equal', 0);
     products().its('sortByPrice').should('be.equal', 0);
@@ -81,8 +73,7 @@ describe('products tests', () => {
       });
   });
   it('there should be 6 products in store', () => {
-    const products = () =>
-      cy.window().its('store').invoke('getState').its('Products');
+    const products = () => cy.window().its('store').invoke('getState').its('Products');
     cy.visit('/bags');
     cy.get('[data-cy=model-name]').click();
     cy.get('[data-cy="nine products per page"]').click();
@@ -92,8 +83,7 @@ describe('products tests', () => {
   });
 
   it('there should be 18 products in store', () => {
-    const products = () =>
-      cy.window().its('store').invoke('getState').its('Products');
+    const products = () => cy.window().its('store').invoke('getState').its('Products');
     cy.visit('/bags');
     cy.get('[data-cy=model-name]').click();
     cy.get('[title="eighteen products per page"]').click();
@@ -102,8 +92,7 @@ describe('products tests', () => {
     products().its('countPerPage').should('be.equal', 18);
   });
   it('there should be 30 products in store', () => {
-    const products = () =>
-      cy.window().its('store').invoke('getState').its('Products');
+    const products = () => cy.window().its('store').invoke('getState').its('Products');
     cy.visit('/bags');
     cy.get('[data-cy=model-name]').click();
     cy.get('[data-cy="thirty products per page"]').click();
@@ -124,18 +113,12 @@ describe('filter test', () => {
     cy.get('[data-cy="bags"]').should('exist').and('be.visible');
     cy.get('[data-cy="backpacks"]').should('exist').and('be.visible');
     cy.get('[data-cy="accessories"]').should('exist').and('be.visible');
-    cy.get('[data-cy="clear_filter_button"]')
-      .should('exist')
-      .and('be.visible')
-      .click();
+    cy.get('[data-cy="clear_filter_button"]').should('exist').and('be.visible').click();
   });
   it('Click to filter button', () => {
     cy.visit('/bags');
     cy.get('[data-cy=model-name]').click();
-    cy.get('[data-cy="filter_button"]')
-      .should('exist')
-      .and('be.visible')
-      .click();
+    cy.get('[data-cy="filter_button"]').should('exist').and('be.visible').click();
   });
   it('Filters should be exist', () => {
     cy.visit('/bags');

@@ -12,11 +12,7 @@ const Wishlist = () => {
 
   return (
     <div className={styles.root}>
-      {wishlistItems.length ? (
-        <FilledWishlist items={wishlistItems} />
-      ) : (
-        <EmptyWishlist />
-      )}
+      {wishlistItems.length ? <FilledWishlist items={wishlistItems} /> : <EmptyWishlist />}
     </div>
   );
 };

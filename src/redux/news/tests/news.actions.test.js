@@ -1,17 +1,5 @@
-import {
-  setArticle,
-  getArticle,
-  setNews,
-  getNews,
-  setLoading
-} from '../news.actions';
-import {
-  GET_NEWS,
-  SET_NEWS,
-  GET_NEWS_ARTICLE,
-  SET_NEWS_ARTICLE,
-  SET_LOADING
-} from '../news.types';
+import { setArticle, getArticle, setNews, getNews, setLoading } from '../news.actions';
+import { GET_NEWS, SET_NEWS, GET_NEWS_ARTICLE, SET_NEWS_ARTICLE, SET_LOADING } from '../news.types';
 
 describe('News actions test', () => {
   it('should set all news to payload property', () => {

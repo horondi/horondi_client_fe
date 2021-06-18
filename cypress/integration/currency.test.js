@@ -1,13 +1,8 @@
-import {
-  selectorContains,
-  shouldHaveValue,
-  shouldBeNotVisible
-} from './helper.functions';
+import { selectorContains, shouldHaveValue, shouldBeNotVisible } from './helper.functions';
 
 describe('currency test', () => {
   it('Items should be visible', () => {
-    const currency = () =>
-      cy.window().its('store').invoke('getState').its('Currency');
+    const currency = () => cy.window().its('store').invoke('getState').its('Currency');
 
     cy.visit('/');
     cy.viewport(1280, 720);

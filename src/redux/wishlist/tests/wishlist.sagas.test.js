@@ -7,10 +7,7 @@ import {
   handleRemoveWishlistItem
 } from '../wishlist.sagas';
 import { SET_WISHLIST } from '../wishlist.types';
-import {
-  getFromLocalStorage,
-  setToLocalStorage
-} from '../../../services/local-storage.service';
+import { getFromLocalStorage, setToLocalStorage } from '../../../services/local-storage.service';
 import { addItemToWishlist, removeItemFromWishlist } from '../wishlist.actions';
 
 describe('Wishlist saga', () => {

@@ -12,17 +12,14 @@ const Alert = (props) => <MuiAlert elevation={6} variant='filled' {...props} />;
 const Snackbar = () => {
   const dispatch = useDispatch();
 
-  const {
-    snackBarStatus,
-    snackBarSeverity,
-    snackBarMessage,
-    language
-  } = useSelector(({ Snackbar: snackbar, Language }) => ({
-    snackBarStatus: snackbar.snackBarStatus,
-    snackBarSeverity: snackbar.snackBarSeverity,
-    snackBarMessage: snackbar.snackBarMessage,
-    language: Language.language
-  }));
+  const { snackBarStatus, snackBarSeverity, snackBarMessage, language } = useSelector(
+    ({ Snackbar: snackbar, Language }) => ({
+      snackBarStatus: snackbar.snackBarStatus,
+      snackBarSeverity: snackbar.snackBarSeverity,
+      snackBarMessage: snackbar.snackBarMessage,
+      language: Language.language
+    })
+  );
 
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {

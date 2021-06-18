@@ -1,8 +1,4 @@
-import {
-  SET_CHAT_LOADING,
-  SEND_CHAT_MAIL,
-  SET_MESSAGE_STATE
-} from './chat.types';
+import { SET_CHAT_LOADING, SEND_CHAT_MAIL, SET_MESSAGE_STATE } from './chat.types';
 
 export const sendEmail = (objToSend) => ({
   type: SEND_CHAT_MAIL,

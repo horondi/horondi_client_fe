@@ -35,29 +35,25 @@ const NavbarLeft = () => {
 
   const navbarList = linksList
     ? linksList
-        .filter(({ priority }) => priority <= 3)
-        .map(({ _id, title, link }) => (
-          <Link key={_id} className={styles.link} to={link}>
-            {title[language].value}
-          </Link>
-        ))
+      .filter(({ priority }) => priority <= 3)
+      .map(({ _id, title, link }) => (
+        <Link key={_id} className={styles.link} to={link}>
+          {title[language].value}
+        </Link>
+      ))
     : null;
 
   const moreDropDownList =
     linksList.length > 3
       ? linksList
-          .filter(({ priority }) => priority > 3)
-          .map(({ _id, title, link }) => (
-            <MenuItem
-              key={_id}
-              className={styles.moreItem}
-              onClick={handleClose}
-            >
-              <Link to={link} className={styles.moreItemLink}>
-                {title[language].value}
-              </Link>
-            </MenuItem>
-          ))
+        .filter(({ priority }) => priority > 3)
+        .map(({ _id, title, link }) => (
+          <MenuItem key={_id} className={styles.moreItem} onClick={handleClose}>
+            <Link to={link} className={styles.moreItemLink}>
+              {title[language].value}
+            </Link>
+          </MenuItem>
+        ))
       : null;
 
   return (

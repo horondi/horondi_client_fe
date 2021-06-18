@@ -1,11 +1,7 @@
 import { expectSaga } from 'redux-saga-test-plan';
 import * as matchers from 'redux-saga-test-plan/matchers';
 import { handleSendMail } from '../chat.sagas';
-import {
-  setCommentsLoading,
-  setMessageState,
-  sendEmail
-} from '../chat.actions';
+import { setCommentsLoading, setMessageState, sendEmail } from '../chat.actions';
 import { fakeObjToSend, fakeID } from './chat.variables';
 
 describe('sagas test', () => {

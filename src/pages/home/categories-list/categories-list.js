@@ -39,9 +39,7 @@ const CategoriesList = () => {
 };
 
 export const getCategoryURL = (category) => {
-  const [filteredCategory] = category.filter(
-    (item) => item.lang === URL_LANGUAGE
-  );
+  const [filteredCategory] = category.filter((item) => item.lang === URL_LANGUAGE);
 
   if (filteredCategory.value) {
     return filteredCategory.value.toLowerCase();

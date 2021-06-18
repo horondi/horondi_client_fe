@@ -20,9 +20,7 @@ const FooterLinks = ({ showTitle, socialIconsStyles, position }) => {
       <div className={styles.iconsBox}>
         {showTitle && (
           <div className={styles.cardTitle}>
-            <Typography variant='h5'>
-              {FOOTER_SOCIAL_NETWORK_LINKS[language].title}
-            </Typography>
+            <Typography variant='h5'>{FOOTER_SOCIAL_NETWORK_LINKS[language].title}</Typography>
           </div>
         )}
         <div className={styles.iconsContainer}>

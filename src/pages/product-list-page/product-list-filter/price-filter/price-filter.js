@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import FormGroup from '@material-ui/core/FormGroup';
 import Typography from '@material-ui/core/Typography';
 import Slider from '@material-ui/core/Slider';
-import { map } from 'lodash';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory, useLocation } from 'react-router';
 import {

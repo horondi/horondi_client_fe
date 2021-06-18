@@ -1,8 +1,4 @@
-import {
-  GET_CONTACTS,
-  SET_CONTACTS,
-  SET_CONTACTS_LOADING
-} from './contacts.types';
+import { GET_CONTACTS, SET_CONTACTS, SET_CONTACTS_LOADING } from './contacts.types';
 
 const setContacts = (contact) => ({
   type: SET_CONTACTS,

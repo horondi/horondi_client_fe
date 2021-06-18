@@ -20,6 +20,7 @@ class ErrorBoundary extends React.Component {
     this.props.setError({ error: 'DEFAULT_ERROR' });
     this.setState({ hasError: true });
   }
+
   render() {
     return this.state.hasError ? <ErrorPage /> : this.props.children;
   }

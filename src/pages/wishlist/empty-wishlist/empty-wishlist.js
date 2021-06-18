@@ -5,10 +5,7 @@ import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
 
 import { useStyles } from './empty-wishlist.styles';
-import {
-  WISHLIST_TITTLES,
-  WISHLIST_BUTTONS
-} from '../../../translations/wishlist.translations';
+import { WISHLIST_TITTLES, WISHLIST_BUTTONS } from '../../../translations/wishlist.translations';
 import { WISHLIST_IMAGES } from '../../../configs';
 
 const EmptyWishlist = () => {

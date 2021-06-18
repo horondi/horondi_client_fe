@@ -11,23 +11,17 @@ import { Loader } from '../../../../components/loader/loader';
 import EditableField from './editable-field';
 import CommentDialog from './comment-dialog';
 
-import {
-  COMMENTS_TIME_OPTIONS,
-  DATE_LANGUAGE_OPTIONS,
-  IMG_URL
-} from '../../../../configs';
+import { COMMENTS_TIME_OPTIONS, DATE_LANGUAGE_OPTIONS, IMG_URL } from '../../../../configs';
 import { TOOLTIPS } from '../../../../translations/product-details.translations';
 
 const CommentsItem = ({ user, text, date, commentId }) => {
   const styles = useStyles();
 
-  const { updatingComment, language, userData } = useSelector(
-    ({ Comments, Language, User }) => ({
-      updatingComment: Comments.updatingComment,
-      language: Language.language,
-      userData: User.userData
-    })
-  );
+  const { updatingComment, language, userData } = useSelector(({ Comments, Language, User }) => ({
+    updatingComment: Comments.updatingComment,
+    language: Language.language,
+    userData: User.userData
+  }));
 
   const { name, images } = user;
 
@@ -36,10 +30,7 @@ const CommentsItem = ({ user, text, date, commentId }) => {
 
   const dateLanguage = DATE_LANGUAGE_OPTIONS[language];
   const dateToShow = new Date(parseInt(date));
-  const commentDate = dateToShow.toLocaleString(
-    dateLanguage,
-    COMMENTS_TIME_OPTIONS
-  );
+  const commentDate = dateToShow.toLocaleString(dateLanguage, COMMENTS_TIME_OPTIONS);
 
   const handleOpen = () => {
     toggleModal(true);
@@ -73,20 +64,13 @@ const CommentsItem = ({ user, text, date, commentId }) => {
           </div>
           <div className={styles.icons}>
             <div className={styles.commentActions}>
-              {!isEditable &&
-              (userData ? userData.email === user.email : false) ? (
+              {!isEditable && (userData ? userData.email === user.email : false) ? (
                 <div>
                   <Tooltip title={TOOLTIPS[language].edit}>
-                    <EditIcon
-                      className={styles.editIcon}
-                      onClick={() => setEditable(true)}
-                    />
+                    <EditIcon className={styles.editIcon} onClick={() => setEditable(true)} />
                   </Tooltip>
                   <Tooltip title={TOOLTIPS[language].delete}>
-                    <DeleteForeverIcon
-                      className={styles.deleteIcon}
-                      onClick={handleOpen}
-                    />
+                    <DeleteForeverIcon className={styles.deleteIcon} onClick={handleOpen} />
                   </Tooltip>
                 </div>
               ) : null}
@@ -106,11 +90,7 @@ const CommentsItem = ({ user, text, date, commentId }) => {
         )}
         <div className={styles.date}>{commentDate}</div>
       </div>
-      <CommentDialog
-        handleClose={handleClose}
-        isModalShown={isModalShown}
-        commentId={commentId}
-      />
+      <CommentDialog handleClose={handleClose} isModalShown={isModalShown} commentId={commentId} />
     </div>
   );
 };

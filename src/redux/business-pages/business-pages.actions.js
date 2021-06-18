@@ -15,9 +15,7 @@ const setBusinessPage = (businessPage) => ({
     businessPage,
     key: businessPage.code
       .split('-')
-      .map((val, idx) =>
-        idx !== 0 ? val[0].toUpperCase() + val.slice(1) : val
-      )
+      .map((val, idx) => (idx !== 0 ? val[0].toUpperCase() + val.slice(1) : val))
       .join('')
   }
 });

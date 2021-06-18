@@ -7,18 +7,18 @@ export const initialState = {
 
 const modelReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-  case SET_MODELS:
-    return {
-      ...state,
-      models: action.payload
-    };
-  case SET_MODELS_LOADING:
-    return {
-      ...state,
-      loading: action.payload
-    };
-  default:
-    return state;
+    case SET_MODELS:
+      return {
+        ...state,
+        models: action.payload
+      };
+    case SET_MODELS_LOADING:
+      return {
+        ...state,
+        loading: action.payload
+      };
+    default:
+      return state;
   }
 };
 

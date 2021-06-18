@@ -13,12 +13,10 @@ import HeaderRightBar from '../header-right-bar';
 
 const Sidebar = ({ setIsMenuOpen, isMenuOpen, fromSideBar }) => {
   const styles = useStyles({ fromSideBar });
-  const { language, burgerMenuCategories } = useSelector(
-    ({ Language, BurgerMenu }) => ({
-      language: Language.language,
-      burgerMenuCategories: BurgerMenu.categories
-    })
-  );
+  const { language, burgerMenuCategories } = useSelector(({ Language, BurgerMenu }) => ({
+    language: Language.language,
+    burgerMenuCategories: BurgerMenu.categories
+  }));
 
   const categoriesList = useMemo(
     () =>
@@ -57,20 +55,11 @@ const Sidebar = ({ setIsMenuOpen, isMenuOpen, fromSideBar }) => {
       onClose={() => setIsMenuOpen(false)}
     >
       <List>{categoriesList}</List>
-      <Link
-        to='/constructor'
-        className={styles.mainItem}
-        onClick={() => setIsMenuOpen(false)}
-      >
-        <span className={styles.constructorItem}>
-          {CONSTRUCTOR[language].value}
-        </span>
+      <Link to='/constructor' className={styles.mainItem} onClick={() => setIsMenuOpen(false)}>
+        <span className={styles.constructorItem}>{CONSTRUCTOR[language].value}</span>
       </Link>
       {subList}
-      <FooterLinks
-        socialIconsStyles={styles.socialIconsStyles}
-        position='center'
-      />
+      <FooterLinks socialIconsStyles={styles.socialIconsStyles} position='center' />
       <HeaderRightBar fromSideBar />
     </Drawer>
   );

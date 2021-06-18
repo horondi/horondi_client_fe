@@ -1,8 +1,4 @@
-import {
-  getBusinessPageByCode,
-  setBusinessPage,
-  setLoading
-} from '../business-pages.actions';
+import { getBusinessPageByCode, setBusinessPage, setLoading } from '../business-pages.actions';
 import {
   SET_BUSINESS_PAGE_LOADING,
   SET_BUSINESS_PAGE,

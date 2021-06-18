@@ -78,8 +78,7 @@ export const useStyles = makeStyles((theme) => ({
     '& > span': {
       fontSize: 40,
       color: 'white',
-      textShadow:
-        '-2px -2px 0 #000,2px -2px 0 #000,-2px 2px 0 #000,2px 2px 0 #000'
+      textShadow: '-2px -2px 0 #000,2px -2px 0 #000,-2px 2px 0 #000,2px 2px 0 #000'
     },
     '&:hover': {
       opacity: 0.7,

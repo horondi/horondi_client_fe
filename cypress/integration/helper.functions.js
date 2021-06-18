@@ -1,5 +1,4 @@
-export const selectorContains = (selector, data) =>
-  cy.get(`[data-cy=${selector}]`).contains(data);
+export const selectorContains = (selector, data) => cy.get(`[data-cy=${selector}]`).contains(data);
 
 export const shouldHaveValue = (selector, value) =>
   cy.get(`[data-cy=${selector}] input`).should('have.value', value);

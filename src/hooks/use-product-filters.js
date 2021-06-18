@@ -64,21 +64,13 @@ const useProductFilters = () => {
     categories: {
       filterName: CATERGORY_TEXT[language].value,
       productFilter: categoryFilter,
-      list: map(
-        filterData.categories,
-        (category) => category.name[language].value
-      ),
+      list: map(filterData.categories, (category) => category.name[language].value),
       categories: filterData.categories,
       filterAction: setCategoryFilter,
       labels: URL_QUERIES_NAME.categoryFilter,
-      clearFilter: () =>
-        handleFilterClear(setCategoryFilter, URL_QUERIES_NAME.categoryFilter),
+      clearFilter: () => handleFilterClear(setCategoryFilter, URL_QUERIES_NAME.categoryFilter),
       filterHandler: (e) =>
-        handleFilterChange(
-          e,
-          URL_QUERIES_NAME.categoryFilter,
-          filterData.categories
-        )
+        handleFilterChange(e, URL_QUERIES_NAME.categoryFilter, filterData.categories)
     },
     models: {
       filterName: MODEL_TEXT[language].value,
@@ -87,10 +79,8 @@ const useProductFilters = () => {
       categories: filterData.models,
       filterAction: setModelsFilter,
       labels: URL_QUERIES_NAME.modelsFilter,
-      clearFilter: () =>
-        handleFilterClear(setModelsFilter, URL_QUERIES_NAME.modelsFilter),
-      filterHandler: (e) =>
-        handleFilterChange(e, URL_QUERIES_NAME.modelsFilter, filterData.models)
+      clearFilter: () => handleFilterClear(setModelsFilter, URL_QUERIES_NAME.modelsFilter),
+      filterHandler: (e) => handleFilterChange(e, URL_QUERIES_NAME.modelsFilter, filterData.models)
     },
     patterns: {
       filterName: PATTERN_TEXT[language].value,
@@ -99,14 +89,9 @@ const useProductFilters = () => {
       categories: filterData.patterns,
       filterAction: setPatternsFilter,
       labels: URL_QUERIES_NAME.patternsFilter,
-      clearFilter: () =>
-        handleFilterClear(setPatternsFilter, URL_QUERIES_NAME.patternsFilter),
+      clearFilter: () => handleFilterClear(setPatternsFilter, URL_QUERIES_NAME.patternsFilter),
       filterHandler: (e) =>
-        handleFilterChange(
-          e,
-          URL_QUERIES_NAME.patternsFilter,
-          filterData.patterns
-        )
+        handleFilterChange(e, URL_QUERIES_NAME.patternsFilter, filterData.patterns)
     }
   };
 };

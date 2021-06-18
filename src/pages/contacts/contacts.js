@@ -9,9 +9,7 @@ import { CONTACTS_PAGE_TITLES } from '../../translations/contacts.translations';
 import { selectLanguageAndContactsLoadingContacts } from '../../redux/selectors/multiple.selectors';
 
 const Contacts = ({ fromCheckout }) => {
-  const { contacts, loading, language } = useSelector(
-    selectLanguageAndContactsLoadingContacts
-  );
+  const { contacts, loading, language } = useSelector(selectLanguageAndContactsLoadingContacts);
   const styles = useStyles();
   if (loading) {
     return (
@@ -44,15 +42,11 @@ const Contacts = ({ fromCheckout }) => {
         </div>
         <div className={styles.contacts}>
           <div className={styles.contactsItem}>
-            <span className={styles.contactName}>
-              {CONTACTS_PAGE_TITLES[language].phone}
-            </span>
+            <span className={styles.contactName}>{CONTACTS_PAGE_TITLES[language].phone}</span>
             <span>+{contact.phoneNumber}</span>
           </div>
           <div className={styles.contactsItem}>
-            <span className={styles.contactName}>
-              {CONTACTS_PAGE_TITLES[language].schedule}
-            </span>
+            <span className={styles.contactName}>{CONTACTS_PAGE_TITLES[language].schedule}</span>
             <div className={styles.schedule}>
               {contact.openHours[language].value.split('|').map((el) => {
                 const i = language ? 4 : 3;
@@ -66,12 +60,8 @@ const Contacts = ({ fromCheckout }) => {
             </div>
           </div>
           <div className={styles.contactsItem}>
-            <span className={styles.contactName}>
-              {CONTACTS_PAGE_TITLES[language].address}
-            </span>
-            <div className={styles.contactAddress}>
-              {contact.address[language].value}
-            </div>
+            <span className={styles.contactName}>{CONTACTS_PAGE_TITLES[language].address}</span>
+            <div className={styles.contactAddress}>{contact.address[language].value}</div>
           </div>
           <div className={styles.contactsItem}>
             <span className={styles.contactName}>Email:</span>
@@ -85,9 +75,7 @@ const Contacts = ({ fromCheckout }) => {
   return (
     <div className={styles.wrapper}>
       {!fromCheckout && (
-        <h2 className={styles.contactsTitle}>
-          {CONTACTS_PAGE_TITLES[language].title}
-        </h2>
+        <h2 className={styles.contactsTitle}>{CONTACTS_PAGE_TITLES[language].title}</h2>
       )}
       {contactsDisplay}
     </div>

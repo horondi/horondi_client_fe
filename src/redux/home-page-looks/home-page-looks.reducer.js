@@ -1,7 +1,4 @@
-import {
-  SET_HOME_IMAGE_LOOKS,
-  SET_HOME_IMAGE_LOOKS_LOADING
-} from './home-page-looks.types';
+import { SET_HOME_IMAGE_LOOKS, SET_HOME_IMAGE_LOOKS_LOADING } from './home-page-looks.types';
 
 export const initialState = {
   imageList: [],

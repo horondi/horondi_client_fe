@@ -28,9 +28,7 @@ describe('Categories reducer test', () => {
       loading: true
     };
 
-    expect(
-      categoriesReducer(initialState, setCategories(newCategories))
-    ).toEqual(state);
+    expect(categoriesReducer(initialState, setCategories(newCategories))).toEqual(state);
   });
 
   it('should set loading to false', () => {
@@ -39,8 +37,6 @@ describe('Categories reducer test', () => {
       loading: false
     };
 
-    expect(
-      categoriesReducer(initialState, setCategoriesLoading(false))
-    ).toEqual(state);
+    expect(categoriesReducer(initialState, setCategoriesLoading(false))).toEqual(state);
   });
 });

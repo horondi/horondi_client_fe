@@ -1,11 +1,6 @@
 import commentsReducer, { initialState } from '../comments.reducer';
 
-import {
-  setComments,
-  setCommentsLoading,
-  setRate,
-  setUpdatingComment
-} from '../comments.actions';
+import { setComments, setCommentsLoading, setRate, setUpdatingComment } from '../comments.actions';
 
 describe('comments reducer', () => {
   it('should set comments loading to true', () => {
@@ -14,9 +9,7 @@ describe('comments reducer', () => {
       commentsLoading: true
     };
 
-    expect(commentsReducer(initialState, setCommentsLoading(true))).toEqual(
-      state
-    );
+    expect(commentsReducer(initialState, setCommentsLoading(true))).toEqual(state);
   });
 
   it('should set updating comment to state', () => {
@@ -26,9 +19,7 @@ describe('comments reducer', () => {
       updatingComment: commentId
     };
 
-    expect(
-      commentsReducer(initialState, setUpdatingComment(commentId))
-    ).toEqual(state);
+    expect(commentsReducer(initialState, setUpdatingComment(commentId))).toEqual(state);
   });
 
   it('should set rate to state', () => {

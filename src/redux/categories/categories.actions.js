@@ -1,8 +1,4 @@
-import {
-  GET_CATEGORIES,
-  SET_CATEGORIES,
-  SET_CATEGORIES_LOADING
-} from './categories.types';
+import { GET_CATEGORIES, SET_CATEGORIES, SET_CATEGORIES_LOADING } from './categories.types';
 
 const setCategories = (newCategories) => ({
   type: SET_CATEGORIES,

@@ -1,8 +1,4 @@
-import {
-  SET_SNACKBAR_MESSAGE,
-  SET_SNACKBAR_SEVERITY,
-  SET_SNACKBAR_STATUS
-} from './snackbar.types';
+import { SET_SNACKBAR_MESSAGE, SET_SNACKBAR_SEVERITY, SET_SNACKBAR_STATUS } from './snackbar.types';
 
 const setSnackBarStatus = (newSnackBarStatus) => ({
   type: SET_SNACKBAR_STATUS,

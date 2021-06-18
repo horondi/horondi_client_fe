@@ -63,9 +63,7 @@ describe('News reducer test', () => {
       activeArticle: articleExample
     };
 
-    expect(newsReducer(initialState, setArticle(articleExample))).toEqual(
-      state
-    );
+    expect(newsReducer(initialState, setArticle(articleExample))).toEqual(state);
   });
 
   it('should set loading to false', () => {

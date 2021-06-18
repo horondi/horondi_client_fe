@@ -11,9 +11,7 @@ describe('toasts reducer tests', () => {
     expect(toastReducer(initialState)).toEqual(initialState);
   });
   it('should set settings to store', () => {
-    expect(
-      toastReducer(initialState, setToastSettings(newToastSettings))
-    ).toEqual({
+    expect(toastReducer(initialState, setToastSettings(newToastSettings))).toEqual({
       ...initialState,
       toastSettings: newToastSettings
     });

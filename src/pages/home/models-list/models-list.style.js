@@ -31,8 +31,7 @@ export const useStyles = makeStyles(() => ({
       right: 5,
       left: 5,
       bottom: 0,
-      background:
-        'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);',
+      background: 'linear-gradient(180deg, rgba(255,255,255,0) 0%, rgba(0,0,0,1) 100%);',
       zIndex: isModelsVisible ? -1 : 5
     }
   })

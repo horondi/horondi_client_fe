@@ -46,13 +46,8 @@ const ProductsFiltersContainer = ({
     setIsListOpen(!isListOpen);
   };
   const checkCategory = (category) => {
-    const categoryName = categories.filter(
-      (element) => element.name[language].value === category
-    );
-    if (
-      categoryName.length &&
-      productFilter.find((filter) => filter === categoryName[0]._id)
-    ) {
+    const categoryName = categories.filter((element) => element.name[language].value === category);
+    if (categoryName.length && productFilter.find((filter) => filter === categoryName[0]._id)) {
       return true;
     }
   };
@@ -60,9 +55,7 @@ const ProductsFiltersContainer = ({
     <Grid className={styles.container}>
       <li className={styles.mainItem} onClick={handleClick}>
         <ListItemText button='true' primary={filterName} />
-        <span className={styles.mainItemIcon}>
-          {isListOpen ? <RemoveIcon /> : <AddIcon />}
-        </span>
+        <span className={styles.mainItemIcon}>{isListOpen ? <RemoveIcon /> : <AddIcon />}</span>
       </li>
       <Collapse in={isListOpen} timeout='auto' unmountOnExit>
         <List>
@@ -78,8 +71,7 @@ const ProductsFiltersContainer = ({
               <ListItem
                 selected={
                   productFilter
-                    ? productFilter.find((filter) => filter === listItem) ||
-                      checkCategory(listItem)
+                    ? productFilter.find((filter) => filter === listItem) || checkCategory(listItem)
                     : false
                 }
                 button

@@ -13,13 +13,11 @@ import Loader from '../../../components/loader';
 
 const ModelsList = () => {
   const dispatch = useDispatch();
-  const { models, language, modelsLoading } = useSelector(
-    ({ Model, Language }) => ({
-      models: Model.models,
-      modelsLoading: Model.loading,
-      language: Language.language
-    })
-  );
+  const { models, language, modelsLoading } = useSelector(({ Model, Language }) => ({
+    models: Model.models,
+    modelsLoading: Model.loading,
+    language: Language.language
+  }));
 
   const [isModelsVisible, setIsModelsVisible] = useState(false);
 
@@ -57,11 +55,9 @@ const ModelsList = () => {
       </div>
       <ClassicButton
         buttonStyle={isModelsVisible ? 'classic' : 'inverse'}
-        buttonType='text'
+        buttonType='button'
         innerText={
-          isModelsVisible
-            ? HOME_BUTTONS[language].HIDE_MODELS
-            : HOME_BUTTONS[language].ALL_MODELS
+          isModelsVisible ? HOME_BUTTONS[language].HIDE_MODELS : HOME_BUTTONS[language].ALL_MODELS
         }
         onClickHandler={onShowModels}
       />

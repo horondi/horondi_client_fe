@@ -7,8 +7,7 @@ const OrderHistoryOrderItem = ({ item, language, currency }) => {
 
   const bottomMaterial = item.bottomMaterial.length && (
     <span>
-      {ORDER_TABLE_FIELDS[language].bagBottom}:{' '}
-      {item.bottomMaterial[language].value}
+      {ORDER_TABLE_FIELDS[language].bagBottom}: {item.bottomMaterial[language].value}
     </span>
   );
 
@@ -16,10 +15,7 @@ const OrderHistoryOrderItem = ({ item, language, currency }) => {
     <div className={styles.root} data-cy='order-history-order-item'>
       <div className={styles.itemData}>
         <div className={styles.image} data-cy='order-history-order-item-img' />
-        <div
-          className={styles.description}
-          data-cy='order-history-order-item-description'
-        >
+        <div className={styles.description} data-cy='order-history-order-item-description'>
           <span className={styles.itemName}>{item.name[language].value}</span>
           {bottomMaterial || null}
         </div>

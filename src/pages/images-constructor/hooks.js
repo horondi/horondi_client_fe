@@ -31,9 +31,9 @@ export const useConstructor = () => {
   const { DEFAULT_PRICE_VALUE } = CONSTRUCTOR_TITLES[currency];
 
   const models = constructorModel.modelsForConstructor;
-  const basics = currentModel.constructorBasic;
-  const patterns = currentModel.constructorPattern;
-  const bottoms = currentModel.constructorBottom;
+  const basics = currentModel.eligibleOptions?.constructorBasic;
+  const patterns = currentModel.eligibleOptions?.constructorPattern;
+  const bottoms = currentModel.eligibleOptions?.constructorBottom;
 
   useEffect(() => {
     dispatch(getModelForConstructor());
@@ -46,12 +46,19 @@ export const useConstructor = () => {
   }, [models]);
 
   useEffect(() => {
-    if (currentModel) {
+    if (currentModel.eligibleOptions) {
+      const {
+        constructorBasic,
+        constructorFrontPocket,
+        constructorPattern,
+        constructorBottom
+      } = currentModel.eligibleOptions;
+
       dispatch(setModelLoading(true));
-      dispatch(getConstructorBasic(currentModel.constructorBasic[0]._id));
-      dispatch(getConstructorFrontPocket(currentModel.constructorFrontPocket[0]._id));
-      dispatch(getConstructorPattern(currentModel.constructorPattern[0]._id));
-      dispatch(getConstructorBottom(currentModel.constructorBottom[0]._id));
+      dispatch(getConstructorBasic(constructorBasic[0]._id));
+      dispatch(getConstructorFrontPocket(constructorFrontPocket[0]._id));
+      dispatch(getConstructorPattern(constructorPattern[0]._id));
+      dispatch(getConstructorBottom(constructorBottom[0]._id));
     }
   }, [currentModel]);
 

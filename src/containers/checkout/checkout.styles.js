@@ -12,5 +12,5 @@ export const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     margin: '0 10px',
     width: '100%'
-  },
+  }
 }));

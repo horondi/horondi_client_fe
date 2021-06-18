@@ -8,10 +8,7 @@ describe('profile test', () => {
   });
 
   it('should contain list items', () => {
-    cy.get('[data-cy="profile"]')
-      .invoke('show')
-      .should('be.visible')
-      .find('li');
+    cy.get('[data-cy="profile"]').invoke('show').should('be.visible').find('li');
   });
 
   it('should contain wish list', () => {

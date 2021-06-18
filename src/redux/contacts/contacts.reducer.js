@@ -7,19 +7,19 @@ const initialState = {
 
 export const contactsReducer = (state = initialState, action = {}) => {
   switch (action.type) {
-  case SET_CONTACTS:
-    return {
-      ...state,
-      contacts: action.payload
-    };
+    case SET_CONTACTS:
+      return {
+        ...state,
+        contacts: action.payload
+      };
 
-  case SET_CONTACTS_LOADING:
-    return {
-      ...state,
-      loading: action.payload
-    };
+    case SET_CONTACTS_LOADING:
+      return {
+        ...state,
+        loading: action.payload
+      };
 
-  default:
-    return state;
+    default:
+      return state;
   }
 };

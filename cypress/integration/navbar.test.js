@@ -10,21 +10,12 @@ describe('Navbar test', () => {
   });
 
   it('should move to a certain page', () => {
-    cy.get('.MuiToolbar-root > [href="/backpacks"]')
-      .click()
-      .url()
-      .should('include', '/backpacks');
-    cy.get('.MuiToolbar-root  > [href="/bags"]')
-      .click()
-      .url()
-      .should('include', '/bags');
+    cy.get('.MuiToolbar-root > [href="/backpacks"]').click().url().should('include', '/backpacks');
+    cy.get('.MuiToolbar-root  > [href="/bags"]').click().url().should('include', '/bags');
     cy.get('.MuiToolbar-root  > [href="/accessories"]')
       .click()
       .url()
       .should('include', '/accessories');
-    cy.get('.MuiTypography-root > [href="/"]')
-      .click()
-      .url()
-      .should('include', '/');
+    cy.get('.MuiTypography-root > [href="/"]').click().url().should('include', '/');
   });
 });

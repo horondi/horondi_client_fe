@@ -17,12 +17,7 @@ const OrderHistoryOrder = ({ order }) => {
   const styles = useStyles();
 
   const orderList = order.items.map((item, index) => (
-    <OrderHistoryOrderItem
-      key={index}
-      item={item}
-      language={language}
-      currency={currency}
-    />
+    <OrderHistoryOrderItem key={index} item={item} language={language} currency={currency} />
   ));
 
   const totalPrice = (order.totalItemsPrice[currency].value / 100).toFixed(2);
@@ -39,15 +34,10 @@ const OrderHistoryOrder = ({ order }) => {
           {new Intl.DateTimeFormat('en-US').format(order.dateOfCreation)}
         </div>
         <div>
-          {ORDER_HISTORY_TABLE_FIELDS[language].status}:
-          {ORDER_STATUSES[order.status][language]}
+          {ORDER_HISTORY_TABLE_FIELDS[language].status}:{ORDER_STATUSES[order.status][language]}
         </div>
       </div>
-      <OrderTable
-        items={orderList}
-        totalPrice={totalPrice}
-        currency={orderCurrency}
-      />
+      <OrderTable items={orderList} totalPrice={totalPrice} currency={orderCurrency} />
     </div>
   );
 };

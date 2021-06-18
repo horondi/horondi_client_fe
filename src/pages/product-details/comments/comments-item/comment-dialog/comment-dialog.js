@@ -10,10 +10,7 @@ import Button from '@material-ui/core/Button';
 import { useStyles } from './comment-dialog.styles';
 
 import { deleteComment } from '../../../../../redux/comments/comments.actions';
-import {
-  DIALOG,
-  PDP_BUTTONS
-} from '../../../../../translations/product-details.translations';
+import { DIALOG, PDP_BUTTONS } from '../../../../../translations/product-details.translations';
 
 const CommentDialog = ({ isModalShown, handleClose, commentId }) => {
   const styles = useStyles();
@@ -37,9 +34,7 @@ const CommentDialog = ({ isModalShown, handleClose, commentId }) => {
   return (
     <div>
       <Dialog open={isModalShown} onClose={handleClose}>
-        <DialogTitle className={styles.title}>
-          {DIALOG[language].title}
-        </DialogTitle>
+        <DialogTitle className={styles.title}>{DIALOG[language].title}</DialogTitle>
         <DialogContent>
           <DialogContentText>{DIALOG[language].description}</DialogContentText>
         </DialogContent>

@@ -1,13 +1,8 @@
-import {
-  selectorContains,
-  shouldHaveValue,
-  shouldBeNotVisible
-} from './helper.functions';
+import { selectorContains, shouldHaveValue, shouldBeNotVisible } from './helper.functions';
 
 describe('language test', () => {
   it('Items should be visible', () => {
-    const language = () =>
-      cy.window().its('store').invoke('getState').its('Language');
+    const language = () => cy.window().its('store').invoke('getState').its('Language');
 
     cy.visit('/');
     cy.viewport(1280, 720);

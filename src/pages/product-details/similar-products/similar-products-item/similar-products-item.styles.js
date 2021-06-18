@@ -2,9 +2,7 @@ import { makeStyles } from '@material-ui/core/styles';
 
 export const useStyles = makeStyles(() => ({
   similarItem: (props) => ({
-    background: `url(${props.image}) center center ${
-      props.isLightTheme ? '#e3e7ea' : '#262626'
-    }`,
+    background: `url(${props.image}) center center ${props.isLightTheme ? '#e3e7ea' : '#262626'}`,
     width: '280px',
     height: '330px',
     backgroundSize: 'cover',

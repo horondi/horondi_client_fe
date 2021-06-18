@@ -1,7 +1,4 @@
-import {
-  SET_BURGER_MENU_LINKS,
-  SET_BURGER_MENU_LOADING_LINKS
-} from './burger-menu.types';
+import { SET_BURGER_MENU_LINKS, SET_BURGER_MENU_LOADING_LINKS } from './burger-menu.types';
 
 export const initialState = {
   categories: [],

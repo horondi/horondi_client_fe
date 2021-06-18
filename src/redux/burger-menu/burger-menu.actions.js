@@ -4,12 +4,10 @@ import {
   SET_BURGER_MENU_LOADING_LINKS
 } from './burger-menu.types';
 
-const setBurgerMenuLinks = (newBurgerMenu) => {
-  return {
-    type: SET_BURGER_MENU_LINKS,
-    payload: newBurgerMenu
-  };
-};
+const setBurgerMenuLinks = (newBurgerMenu) => ({
+  type: SET_BURGER_MENU_LINKS,
+  payload: newBurgerMenu
+});
 
 const getBurgerMenuLinks = () => ({
   type: GET_BURGER_MENU_LINKS

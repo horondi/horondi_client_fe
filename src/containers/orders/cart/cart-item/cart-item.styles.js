@@ -52,7 +52,7 @@ export const useStyles = makeStyles((theme) => ({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  itemImg:{
+  itemImg: {
     marginLeft: 20
   }
 }));

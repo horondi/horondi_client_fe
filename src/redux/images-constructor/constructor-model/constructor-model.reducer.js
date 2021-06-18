@@ -12,23 +12,23 @@ export const initialState = {
 
 const constructorModel = (state = initialState, action = {}) => {
   switch (action.type) {
-  case SET_MODEL_FOR_CONSTRUCTOR:
-    return {
-      ...state,
-      modelsForConstructor: action.payload
-    };
-  case SET_CONSTRUCTOR_MODEL_BY_ID:
-    return {
-      ...state,
-      currentModel: action.payload
-    };
-  case SET_MODEL_LOADING:
-    return {
-      ...state,
-      modelLoading: action.payload
-    };
-  default:
-    return state;
+    case SET_MODEL_FOR_CONSTRUCTOR:
+      return {
+        ...state,
+        modelsForConstructor: action.payload
+      };
+    case SET_CONSTRUCTOR_MODEL_BY_ID:
+      return {
+        ...state,
+        currentModel: action.payload
+      };
+    case SET_MODEL_LOADING:
+      return {
+        ...state,
+        modelLoading: action.payload
+      };
+    default:
+      return state;
   }
 };
 

@@ -61,10 +61,10 @@ $ npm install
 ### How to run local
 
 1. Open terminal.
-2. Run `npm run start` to start application.<sup>[*](#footnote)</sup>
+2. Run `npm run start` to start application.<sup>[\*](#footnote)</sup>
 3. Open http://localhost:3000 to view it in the browser.
 
-###### <a name="footnote">*</a> - to run the project you need an `.env` file in root folder
+###### <a name="footnote">\*</a> - to run the project you need an `.env` file in root folder
 
 ### How to run Docker
 
@@ -260,7 +260,7 @@ if issue is in work it should be placed in proper column on dashboard according 
 
 ---
 
-### Chat.
+### Chat
 
 For run Facebook chat on your site you need two variables - pageId and appId and write them
 in 'src -> configs -> index and find a variable CHAT_FACEBOOK_DATA.
@@ -328,15 +328,12 @@ https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-
 [![@AndronShermeta](https://avatars.githubusercontent.com/u/73708298?s=200)](https://github.com/AndronShermeta)
 [![@khrystynaDm1307](https://avatars.githubusercontent.com/u/53223985?s=200)](https://github.com/khrystynaDm1307)
 
-
-
 ### Quality control team
 
 [![@HrytsykOlya](https://avatars1.githubusercontent.com/u/65678737?s=200&u=181e62bf4f25b07122f06ce677e73ddd34021391&v=4)](https://github.com/HrytsykOlya)
 [![@LiliiK](https://avatars.githubusercontent.com/u/65678768?s=200&u=2c968beb250d7b155441ab05d28e0a7be616606b&v=4)](https://github.com/LiliiK)
 [![@IrynaVakhula](https://avatars.githubusercontent.com/u/65680712?s=200&u=d0785408325af9d2c9d8dcb9a18e71c11fa005a8&v=4)](https://github.com/IrynaVakhula)
 [![@MartaZyhmund](https://avatars.githubusercontent.com/u/65674403?s=200&u=ff0b2c38b52b422ac58138ad9f38f2b81b7d8957&v=4)](https://github.com/MartaZyhmund)
-
 
 ### ISTQB team
 
@@ -357,7 +354,6 @@ https://developers.facebook.com/docs/messenger-platform/discovery/facebook-chat-
 [![@Evgeniya-Volkova](https://avatars.githubusercontent.com/u/76967400?s=200)](https://github.com/Evgeniya-Volkova)
 [![@nadiya17](https://avatars.githubusercontent.com/u/47214428?s=200)](https://github.com/nadiya17)
 [YevgeniiSt](https://github.com/YevgeniiSt)
-
 
 ### Database team
 

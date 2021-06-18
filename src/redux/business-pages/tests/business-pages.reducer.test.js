@@ -27,9 +27,7 @@ describe('Business pages reducer tests', () => {
       loading: false
     };
 
-    expect(
-      businessPagesReducer(initialState, setBusinessPage(businessPage))
-    ).toEqual(state);
+    expect(businessPagesReducer(initialState, setBusinessPage(businessPage))).toEqual(state);
   });
 
   it('should set loading to true', () => {

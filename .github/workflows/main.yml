@@ -1,12 +1,12 @@
 name: CI
 
-# Controls when the action will run. 
+# Controls when the action will run.
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
-    branches: [ master, development ]
+    branches: [master, development]
   pull_request:
-    branches: [ master, development ]
+    branches: [master, development]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -23,7 +23,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
         with:
-          fetch-depth: 0   
+          fetch-depth: 0
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.2
         with:
@@ -32,13 +32,13 @@ jobs:
       - run: npm test -- -u
 
       - name: fix code coverage paths
-        run: | 
+        run: |
           sed -i 's/\/home\/runner\/work\/horondi_client_fe\/horondi_client_fe\//\/github\/workspace\//g' test-report.xml
           sed -i 's/\/home\/runner\/work\/horondi_client_fe\/horondi_client_fe\//\/github\/workspace\//g' coverage/lcov.info
-      
+
       - name: SonarCloud Scan
         uses: SonarSource/sonarcloud-github-action@master
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }} 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           CI: true

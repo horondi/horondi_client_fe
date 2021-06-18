@@ -1,10 +1,5 @@
 import userReducer, { initialState } from '../user.reducer';
-import {
-  setUserError,
-  setUser,
-  logoutUser,
-  setUserLoading
-} from '../user.actions';
+import { setUserError, setUser, logoutUser, setUserLoading } from '../user.actions';
 
 const user = {
   name: 'user',

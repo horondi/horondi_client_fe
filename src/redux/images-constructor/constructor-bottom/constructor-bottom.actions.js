@@ -1,7 +1,4 @@
-import {
-  GET_CONSTRUCTOR_BOTTOM,
-  SET_CONSTRUCTOR_BOTTOM
-} from './constructor-bottom.types';
+import { GET_CONSTRUCTOR_BOTTOM, SET_CONSTRUCTOR_BOTTOM } from './constructor-bottom.types';
 
 const getConstructorBottom = (payload) => ({
   type: GET_CONSTRUCTOR_BOTTOM,

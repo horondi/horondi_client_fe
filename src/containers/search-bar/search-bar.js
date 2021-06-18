@@ -3,10 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
 
 import { useStyles } from './search-bar.styles';
-import {
-  setSearchFilter,
-  getFiltredProducts
-} from '../../redux/products/products.actions';
+import { setSearchFilter, getFiltredProducts } from '../../redux/products/products.actions';
 import { setSearchBarVisibility } from '../../redux/search-bar/search-bar.actions';
 import { SEARCH_TEXT } from '../../translations/product-list.translations';
 

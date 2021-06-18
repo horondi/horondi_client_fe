@@ -9,9 +9,7 @@ export const useStyles = makeStyles(() => ({
     borderBottom: '1px solid #c3c3c3'
   },
   image: ({ image, isLightTheme }) => ({
-    background: `url(${image}) no-repeat center ${
-      isLightTheme ? '#f6f6f6' : '#323232'
-    }`,
+    background: `url(${image}) no-repeat center ${isLightTheme ? '#f6f6f6' : '#323232'}`,
     width: 80,
     height: '100%'
   }),

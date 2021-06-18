@@ -7,17 +7,17 @@ const initialState = {
 
 export const themeState = (state = initialState, { type, payload } = {}) => {
   switch (type) {
-  case SET_THEME_MODE:
-    return {
-      ...state,
-      lightMode: payload
-    };
-  case SET_FILTER_MENU_STATUS:
-    return {
-      ...state,
-      filterMenuStatus: payload
-    };
-  default:
-    return state;
+    case SET_THEME_MODE:
+      return {
+        ...state,
+        lightMode: payload
+      };
+    case SET_FILTER_MENU_STATUS:
+      return {
+        ...state,
+        filterMenuStatus: payload
+      };
+    default:
+      return state;
   }
 };

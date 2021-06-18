@@ -20,10 +20,7 @@ const AppHeader = () => {
     <div className={styles.root}>
       <AppBar position='static' className={styles.header}>
         <Toolbar>
-          <BurgerMenu
-            className={styles.menuButton}
-            onClick={() => setIsMenuOpen(true)}
-          >
+          <BurgerMenu className={styles.menuButton} onClick={() => setIsMenuOpen(true)}>
             <MenuIcon />
           </BurgerMenu>
           <Typography variant='h5'>

@@ -1,7 +1,4 @@
-import {
-  GET_CONSTRUCTOR_PATTERN,
-  SET_CONSTRUCTOR_PATTERN
-} from './constructor-pattern.types';
+import { GET_CONSTRUCTOR_PATTERN, SET_CONSTRUCTOR_PATTERN } from './constructor-pattern.types';
 
 const getConstructorPattern = (payload) => ({
   type: GET_CONSTRUCTOR_PATTERN,

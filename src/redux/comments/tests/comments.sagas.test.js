@@ -2,24 +2,11 @@ import { expectSaga } from 'redux-saga-test-plan';
 import { throwError } from 'redux-saga-test-plan/providers';
 import * as matchers from 'redux-saga-test-plan/matchers';
 
-import {
-  handleAddComment,
-  handleDeleteComment,
-  handleUpdateComment
-} from '../comments.sagas';
+import { handleAddComment, handleDeleteComment, handleUpdateComment } from '../comments.sagas';
 
-import {
-  addComment,
-  deleteComment,
-  getComments,
-  updateComment
-} from '../comments.operations';
+import { addComment, deleteComment, getComments, updateComment } from '../comments.operations';
 
-import {
-  SET_COMMENTS_LOADING,
-  SET_COMMENTS,
-  SET_UPDATING_COMMENT
-} from '../comments.types';
+import { SET_COMMENTS_LOADING, SET_COMMENTS, SET_UPDATING_COMMENT } from '../comments.types';
 import { SNACKBAR_MESSAGE } from '../../../configs';
 import {
   SET_SNACKBAR_MESSAGE,
