@@ -22,10 +22,16 @@ export const useStyles = makeStyles(() => ({
     color: isLightTheme ? '#1D1C1C' : '#ffffff'
   }),
   dataInput: {
-    width: '87%'
+    width: '87%',
+    '@media (max-width: 768px)': {
+      width: '100%',
+    }
   },
   selectorInfo: {
     width: '87%',
-    marginBottom: 15
+    marginBottom: 15,
+    '@media (max-width: 768px)': {
+      width: '100%',
+    }
   }
 }));

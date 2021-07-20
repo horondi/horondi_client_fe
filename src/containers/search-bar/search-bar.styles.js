@@ -5,11 +5,18 @@ export const useStyles = makeStyles(() => ({
     height: 61,
     margin: '0 8px',
     display: fromSideBar ? 'none' : 'inline',
+    '@media (max-width: 768px)': {
+      height: '70px'
+    },
     '& label.Mui-focused': {
-      color: 'white'
+      color: 'white',
+      '@media (max-width: 768px)': {
+        display: 'none'
+      }
     },
     '& .MuiInput-underline:after, & .MuiInput-underline:before': {
-      borderBottomColor: 'white'
+      borderBottomColor: 'white',
+      transition: 'all 0.5s linear'
     },
     '& .MuiOutlinedInput-root': {
       '& fieldset': {
@@ -23,13 +30,28 @@ export const useStyles = makeStyles(() => ({
       }
     },
     '& .MuiFormLabel-root': {
-      color: 'rgb(255 255 255 / 54%)'
+      color: 'rgb(255 255 255 / 54%)',
+      '@media (max-width: 768px)': {
+        marginTop: '2px'
+      }
     },
     '& .MuiInputBase-input': {
       color: 'white'
     },
     '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-      borderBottomColor: '#dedede'
+      borderBottomColor: '#dedede',
+      transition: 'all 0.5s linear'
     }
-  })
+  }),
+  sticky: {
+    '& label.Mui-focused': {
+      display: 'none'
+    },
+    '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
+      borderBottomColor: '#0000 !important'
+    },
+    '& .MuiInput-underline:after, & .MuiInput-underline:before': {
+      borderBottomColor: '#0000 !important'
+    }
+  }
 }));

@@ -55,6 +55,7 @@ const PriceFilter = () => {
     searchParams.set(page, defaultPage);
     history.push(`?${searchParams.toString()}`);
   };
+
   const min = getMin(minPrice, currency);
   const max = getMax(maxPrice, currency);
   return (

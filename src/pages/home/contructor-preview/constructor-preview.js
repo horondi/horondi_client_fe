@@ -19,7 +19,8 @@ const ConstructorPreview = () => {
   const language = useSelector(({ Language }) => Language.language);
 
   const [isMouseIn, setIsMouseIn] = useState(false);
-  const [isMuted, setIsMuted] = useState(0);
+  const [isZeroVolume, setIsZeroVolume] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
 
   const styles = useStyles({ isMouseIn });
   const dispatch = useDispatch();
@@ -34,7 +35,8 @@ const ConstructorPreview = () => {
         width='100%'
         height='100%'
         playing
-        volume={isMuted}
+        volume={isZeroVolume}
+        muted={isMuted}
         loop
         url={CONSTRUCTOR_VIDEO_LINK}
       />
@@ -50,10 +52,20 @@ const ConstructorPreview = () => {
         </Link>
       </div>
       <div className={styles.playerSoundControl}>
-        {isMuted ? (
-          <VolumeUpIcon onClick={() => setIsMuted(0)} />
+        {isZeroVolume ? (
+          <VolumeUpIcon
+            onClick={() => {
+              setIsZeroVolume(0);
+              setIsMuted(true);
+            }}
+          />
         ) : (
-          <VolumeOffIcon onClick={() => setIsMuted(1)} />
+          <VolumeOffIcon
+            onClick={() => {
+              setIsZeroVolume(1);
+              setIsMuted(false);
+            }}
+          />
         )}
       </div>
     </div>

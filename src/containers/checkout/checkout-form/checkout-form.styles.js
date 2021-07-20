@@ -9,12 +9,20 @@ export const useStyles = makeStyles(({ palette }) => ({
   formControl: {
     width: 260,
     marginLeft: '2%',
-    marginBottom: '3%'
+    marginBottom: '3%',
+    '@media (max-width: 768px)': {
+      flexDirection: 'column',
+      width: '100%',
+      margin:0
+    }
   },
   paymentSelect: {
     height: 50,
     width: 280,
-    marginBottom: 10
+    marginBottom: 10,
+    '@media (max-width: 768px)': {
+      width: '100%',
+    },
   },
   contactInfoTitle: ({ isLightTheme }) => ({
     fontSize: 18,
@@ -23,7 +31,7 @@ export const useStyles = makeStyles(({ palette }) => ({
     width: '40%',
     marginLeft: '2%',
     '@media (max-width: 920px)': {
-      width: '80%'
+      width: '100%'
     }
   }),
   paymentTitle: {
@@ -43,9 +51,10 @@ export const useStyles = makeStyles(({ palette }) => ({
     alignItems: 'flex-start',
     width: '100%',
     marginLeft: 10,
-    '@media (max-width: 700px)': {
+    '@media (max-width: 768px)': {
       flexDirection: 'column',
-      width: '80%'
+      width: '100%',
+      margin:0
     }
   },
   a: {
@@ -67,7 +76,7 @@ export const useStyles = makeStyles(({ palette }) => ({
   },
   userInfoContainer: {
     width: '60%',
-    '@media (max-width: 700px)': {
+    '@media (max-width: 768px)': {
       width: '100%'
     }
   },
@@ -76,7 +85,7 @@ export const useStyles = makeStyles(({ palette }) => ({
     flexDirection: 'column',
     width: '100%',
     alignItems: 'flex-start',
-    '@media (max-width: 700px)': {
+    '@media (max-width: 768px)': {
       width: '100%'
     }
   },
@@ -87,13 +96,24 @@ export const useStyles = makeStyles(({ palette }) => ({
   textField: {
     width: 300,
     margin: 10,
-    '@media (max-width: 700px)': {
-      width: '100%'
+    '@media (max-width: 768px)': {
+      width: '100%',
+      margin:"10px 0px 10px"
     }
   },
   textAreaField: {
     width: 500,
-    marginLeft: '2%'
+    marginLeft: '2%',
+    '@media (max-width: 768px)': {
+      width: '100%',
+      margin: 0
+    }
+  },
+  submitInfo:{
+        '@media (max-width: 768px)': {
+      width: '100%',
+      margin: 0
+    }
   },
   submitBtn: {
     display: 'flex',
@@ -105,13 +125,16 @@ export const useStyles = makeStyles(({ palette }) => ({
     background: palette.button.normal.backgroundColor,
     borderRadius: '10px',
     width: 280,
-    marginBottom: 20,
+    margin: '0px auto 20px',
     height: 43,
     cursor: 'pointer',
     color: palette.button.normal.color,
     '&:hover': {
       backgroundColor: palette.button.hover.backgroundColor,
       color: palette.button.hover.color
+    },
+    '@media (max-width: 768px)': {
+      width: '100%'
     }
   },
   totalSum: {
@@ -147,6 +170,9 @@ export const useStyles = makeStyles(({ palette }) => ({
     },
     width: '55%'
   }),
+  delivery:{
+    width:'100%',
+  },
   deliveryContainer: {
     display: 'flex',
     flexDirection: 'column',
@@ -162,7 +188,7 @@ export const useStyles = makeStyles(({ palette }) => ({
   inputData: {
     display: 'flex',
     flexDirection: 'column',
-    '@media (max-width: 700px)': {
+    '@media (max-width: 768px)': {
       width: '100%'
     }
   },
@@ -209,7 +235,7 @@ export const useStyles = makeStyles(({ palette }) => ({
     background: '#636262',
     height: 1,
     '@media (max-width: 920px)': {
-      width: 400
+      width: '100%'
     }
   },
 

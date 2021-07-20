@@ -32,7 +32,13 @@ export const useStyles = makeStyles((theme) => ({
     }
   },
   newsText: {
-    textAlign: 'justify'
+    textAlign: 'justify',
+    '@media (max-width: 768px)': {
+      width: '100%',
+      '& img': {
+        width: '100%'
+      }
+    }
   },
   newsAuthorFooter: {
     display: 'flex',

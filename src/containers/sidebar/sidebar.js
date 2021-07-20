@@ -1,21 +1,32 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState, useLayoutEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import List from '@material-ui/core/List';
 import Drawer from '@material-ui/core/Drawer';
 
+import clsx from 'clsx';
 import SideBarItem from './sidebar-item';
 import { useStyles } from './sidebar.styles';
 import { CONSTRUCTOR } from '../../translations/sidebar.translations';
 import { sideBarSubList } from '../../configs';
 import FooterLinks from '../footer-links';
-import HeaderRightBar from '../header-right-bar';
+import SidemenuRightBar from '../sidemenu-right-bar';
 import routes from '../../const/routes';
 
 const { pathToConstructor } = routes;
 
 const Sidebar = ({ setIsMenuOpen, isMenuOpen, fromSideBar }) => {
   const styles = useStyles({ fromSideBar });
+  const [sticky, setSticky] = useState(false);
+  const sidebar = clsx({
+    [styles.drawer]: true,
+    [styles.sticky]: sticky
+  });
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', () => {
+      window.scrollY > 50 ? setSticky(true) : setSticky(false);
+    });
+  }, []);
   const { language, burgerMenuCategories } = useSelector(({ Language, BurgerMenu }) => ({
     language: Language.language,
     burgerMenuCategories: BurgerMenu.categories
@@ -52,7 +63,7 @@ const Sidebar = ({ setIsMenuOpen, isMenuOpen, fromSideBar }) => {
 
   return (
     <Drawer
-      className={styles.drawer}
+      className={sidebar}
       anchor='left'
       open={isMenuOpen}
       onClose={() => setIsMenuOpen(false)}
@@ -63,7 +74,7 @@ const Sidebar = ({ setIsMenuOpen, isMenuOpen, fromSideBar }) => {
       </Link>
       {subList}
       <FooterLinks socialIconsStyles={styles.socialIconsStyles} position='center' />
-      <HeaderRightBar fromSideBar />
+      <SidemenuRightBar fromSideBar />
     </Drawer>
   );
 };

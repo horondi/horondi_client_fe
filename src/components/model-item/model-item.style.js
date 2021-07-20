@@ -51,7 +51,10 @@ export const useStyles = makeStyles(() => ({
     textAlign: 'left',
     transition: 'color .2s ease',
     textTransform: 'uppercase',
-    fontWeight: '600'
+    fontWeight: '600',
+    '@media (max-width: 450px)': {
+      fontSize: '1.3em'
+    }
   },
   modelItemImage: {
     width: '50%',
@@ -62,7 +65,12 @@ export const useStyles = makeStyles(() => ({
     '& img': {
       transition: 'all .2s ease',
       width: 'auto',
-      height: '100%'
+      height: '100%',
+      '@media (max-width: 450px)': {
+        height: '70%',
+        marginLeft: '-30px',
+        marginTop: '30px'
+      }
     }
   },
   link: {

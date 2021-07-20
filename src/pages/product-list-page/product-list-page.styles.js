@@ -15,7 +15,11 @@ export const useStyles = makeStyles((theme) => ({
   },
   productsDiv: {
     width: '100%',
-    padding: '0px 20px'
+
+    '@media (max-width: 768px)': {
+      padding: 0,
+      margin: 0
+    }
   },
   sortDiv: {
     alignItems: 'center',

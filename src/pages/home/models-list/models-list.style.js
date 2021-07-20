@@ -12,18 +12,24 @@ export const useStyles = makeStyles(() => ({
     transition: 'height 1s ease',
     '& button': {
       zIndex: 10
+    },
+    '@media (max-width: 768px)': {
+      height: !isModelsVisible ? '100%' : `300px`
     }
   }),
   modelsWrapper: ({ isModelsVisible }) => ({
     display: 'flex',
     flexFlow: 'wrap',
     width: 1280,
-    height: isModelsVisible ? '100%' : 210,
+    height: isModelsVisible ? '66%' : 210,
     boxSizing: 'border-box',
     justifyContent: 'center',
     position: 'relative',
     transition: 'height 1s ease',
     overflow: 'hidden',
+    '@media (max-width: 1024px)': {
+      width: '100%'
+    },
     '&:after': {
       content: `''`,
       position: 'absolute',

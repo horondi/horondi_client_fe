@@ -81,15 +81,14 @@ export const useStyles = makeStyles((theme) => {
       height: '2rem',
       '@media (max-width: 950px)': {
         marginBottom: '1.5rem',
-        marginTop: '15px'
+        marginTop: '15px',
+        width: '100%',
+        padding: 0
       },
       '& p': {
         position: 'absolute',
         top: '45px',
         fontSize: '10px'
-      },
-      '@media (max-width: 350px)': {
-        width: '85vw'
       },
       '& input': {
         background: '#fff',
@@ -106,7 +105,11 @@ export const useStyles = makeStyles((theme) => {
         marginTop: '1rem'
       },
       '@media (max-width: 600px)': {
-        width: '100%'
+        width: '100%',
+        padding: 0,
+        '& label':{
+          width:'90%'
+        }
       },
       '& p': {
         position: 'absolute',
@@ -136,16 +139,11 @@ export const useStyles = makeStyles((theme) => {
         marginBottom: '1.5rem'
       },
       title: {
-        textAlign: 'left important!'
+        textAlign: 'left important!',
+        submit: {
+          display: 'flex',
+          justifyContent: 'flex-end'
+        }
       }
-    },
-    loader: {
-      marginLeft: theme.spacing(2),
-      marginBottom: theme.spacing(2.5)
-    },
-    submit: {
-      display: 'flex',
-      justifyContent: 'flex-end'
     }
-  };
-});
+  }});

@@ -14,6 +14,14 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
-    maxWidth: '800px'
+    maxWidth: '800px',
+    '@media (max-width: 768px)': {
+      '& img': {
+        width: '100%'
+      },
+      '& h2': {
+        fontSize: '25px'
+      }
+    }
   }
 }));

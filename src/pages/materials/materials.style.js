@@ -31,7 +31,10 @@ export const useStyles = makeStyles((theme) => ({
     '& .editor-img ': {
       width: 200,
       float: ' left',
-      margin: '0 30px 30px 0'
+      margin: '0 30px 30px 0',
+      '@media (max-width: 768px)': {
+        width: '100%'
+      }
     },
     '.sliderImage img': {
       width: '100%'

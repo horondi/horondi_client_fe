@@ -4,7 +4,10 @@ export const useStyles = makeStyles((theme) => ({
   homeHeader: {
     position: 'relative',
     height: 'calc(100vh - 50px)',
-    alignItems: 'center'
+    alignItems: 'center',
+    '& .awssld__wrapper': {
+      '--loader-bar-color': 'rgba(0, 0, 0, 0.15) !important'
+    }
   },
   sliderInner: {
     opacity: 0,
@@ -19,6 +22,7 @@ export const useStyles = makeStyles((theme) => ({
       backgroundColor: 'rgba(0, 0, 0, 0.7)'
     }
   },
+
   hoverArrow: {
     position: 'absolute',
     display: 'flex',
@@ -51,8 +55,13 @@ export const useStyles = makeStyles((theme) => ({
     transform: 'translate(-50%, -50%)',
     color: '#fff',
     fontSize: '36px',
-    zIndex: 10
+    zIndex: 10,
+    '@media (max-width: 768px)': {
+      top: '30%',
+      fontSize: '25px'
+    }
   },
+
   description: {
     position: 'absolute',
     top: '30%',
@@ -60,6 +69,9 @@ export const useStyles = makeStyles((theme) => ({
     transform: 'translate(-50%, -50%)',
     color: '#fff',
     fontSize: '24px',
-    zIndex: 10
+    zIndex: 10,
+    '@media (max-width: 768px)': {
+      display: 'none'
+    }
   }
 }));

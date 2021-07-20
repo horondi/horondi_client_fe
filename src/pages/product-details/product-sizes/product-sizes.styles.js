@@ -14,7 +14,8 @@ export const useStyles = makeStyles((theme) => {
       width: '50px',
       paddingBottom: '0.55rem',
       '@media (max-width: 600px)': {
-        justifyContent: 'center'
+        justifyContent: 'center',
+        marginLeft: '-20px'
       }
     },
     label: {

@@ -106,7 +106,7 @@ const CartItem = ({ item, language, currency, calcPrice, user, cartQuantityLoadi
           )}
         </div>
       </TableCell>
-      <TableCell>
+      <TableCell classes={{ root: styles.delete }}>
         <span className={styles.deleteIcon}>
           <DeleteIcon onClick={onDeleteItem} fontSize='default' />
         </span>

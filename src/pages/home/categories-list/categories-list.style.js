@@ -8,6 +8,13 @@ export const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    '@media (max-width: 768px)': {
+      '& .react-multiple-carousel__arrow': {
+        width: '40px !important',
+        height: '40px !important',
+        zIndex: 0
+      }
+    },
     '& > div': {
       height: '100%',
       width: '100%'

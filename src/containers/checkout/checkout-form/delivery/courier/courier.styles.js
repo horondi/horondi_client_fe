@@ -8,12 +8,11 @@ export const useStyles = makeStyles(() => ({
     alignItems: 'flex-start',
     width: '100%',
     marginBottom: '2%',
-    marginLeft: '1%'
   },
   inputData: {
     display: 'flex',
     flexDirection: 'column',
-    width: '100%'
+    width: '100%' 
   },
   inputWrapper: {
     display: 'flex',
@@ -27,7 +26,10 @@ export const useStyles = makeStyles(() => ({
   },
   textField: {
     width: '80%',
-    marginBottom: '3%'
+    marginBottom: '3%',
+    '@media (max-width: 768px)': {
+      width: '100%',
+    }
   },
   courierTitle: ({ isLightTheme }) => ({
     fontWeight: 400,

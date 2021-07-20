@@ -8,13 +8,15 @@ export const useStyles = makeStyles(() => ({
     marginTop: fromSideBar ? 'auto' : 0
   }),
   currency: {
-    '@media (max-width: 450px)': {
-      display: 'none'
+    '& div:hover': {
+      background: 'black',
+      transition: '0.5s easy'
     }
   },
   language: {
-    '@media (max-width: 450px)': {
-      display: 'none'
+    '& div:hover': {
+      background: 'black',
+      transition: '0.5s easy'
     }
   }
 }));

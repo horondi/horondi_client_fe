@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStyles } from './header-right-bar.styles';
+import { useStyles } from './sidemenu-right-bar.styles';
 
 import Currency from '../currency';
 import Language from '../language';
@@ -7,7 +7,7 @@ import CartHeader from '../cart-header';
 import HeaderProfile from '../header-profile';
 import SearchBar from '../search-bar';
 
-const HeaderRightBar = ({ fromSideBar }) => {
+const SidemenuRightBar = ({ fromSideBar }) => {
   const styles = useStyles({ fromSideBar });
 
   return (
@@ -19,10 +19,14 @@ const HeaderRightBar = ({ fromSideBar }) => {
       <div className={styles.language}>
         <Language fromSideBar={fromSideBar} />
       </div>
-      <CartHeader fromSideBar={fromSideBar} />
-      <HeaderProfile fromSideBar={fromSideBar} />
+      <div className={styles.cartHeader}>
+        <CartHeader fromSideBar={fromSideBar} />
+      </div>
+      <div className={styles.headerProfile}>
+        <HeaderProfile fromSideBar={fromSideBar} />
+      </div>
     </div>
   );
 };
 
-export default HeaderRightBar;
+export default SidemenuRightBar;

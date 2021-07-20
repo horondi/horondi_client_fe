@@ -8,6 +8,9 @@ export const dropdownStyles = makeStyles(() => ({
 
     '& svg': {
       display: 'none'
+    },
+    '& .MuiInput-underline:before ': {
+      borderBottom: '#0000'
     }
   },
   rootSelect: ({ fromSideBar }) => ({
@@ -22,15 +25,16 @@ export const dropdownStyles = makeStyles(() => ({
     width: '60px',
     height: '33px',
     cursor: 'pointer',
-    backgroundColor: fromSideBar ? '#fff' : '#000',
+    backgroundColor: fromSideBar ? '#fff' : '#0000',
     color: fromSideBar ? '#000' : '#fff',
     outline: 'none',
     border: 'none',
+    transition: 'all 0.5s ease-out',
     '@media (max-width:768px)': {
       width: '33px'
     },
     '&:hover': {
-      backgroundColor: fromSideBar ? '#000' : '#fff',
+      backgroundColor: fromSideBar ? '#0000' : '#fff',
       color: fromSideBar ? '#fff' : '#000'
     },
     '& li': {
@@ -41,5 +45,8 @@ export const dropdownStyles = makeStyles(() => ({
       width: '1rem !important',
       fontSize: '22px'
     }
+  }),
+  sticky: ({ fromSideBar }) => ({
+    backgroundColor: fromSideBar ? '#fff' : '#0000'
   })
 }));

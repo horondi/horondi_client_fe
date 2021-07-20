@@ -4,7 +4,10 @@ export const useStyles = makeStyles((theme) => ({
   root: {
     fontFamily: 'Montserrat',
     width: '90%',
-    marginBottom: '5rem'
+    marginBottom: '5rem',
+    '@media (max-width: 768px)': {
+      margin: '0px auto 5rem'
+    }
   },
   Link: {
     textDecoration: 'none'

@@ -22,6 +22,12 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: 'rgba(0, 0, 0, 0.15) 0px 4px 12px 0px',
     right: '12px',
     transition: 'background 0.3s',
+    '@media (max-width: 768px)': {
+      width: '40px',
+      height: '40px',
+      boxShadow: ' 0 0 10px white',
+      zIndex: 1200
+    },
     '&:hover': {
       cursor: 'pointer',
       background: '#E4B200'
@@ -31,7 +37,7 @@ export const useStyles = makeStyles((theme) => ({
     margin: '0px 12px',
     padding: '0px',
     position: 'fixed',
-    zIndex: '3',
+    zIndex: '100',
     bottom: '110px',
     top: 'auto',
     height: '60px',
@@ -40,7 +46,11 @@ export const useStyles = makeStyles((theme) => ({
     boxShadow: 'rgba(0, 0, 0, 0.15) 0px 4px 12px 0px',
     background: 'none',
     display: 'block',
-    right: '12px'
+    right: '12px',
+    '@media (max-width: 768px)': {
+      width: '40px',
+      height:'40px'
+    }
   },
   msgIcon: {
     ...flexCenter,
@@ -50,7 +60,12 @@ export const useStyles = makeStyles((theme) => ({
     borderRadius: '50%',
     marginBottom: '20px',
     cursor: 'pointer',
+    boxShadow: 'white 0px 0px 10px',
     transition: 'background 0.3s',
+    '@media (max-width: 768px)': {
+      width: '40px',
+      height:'40px'
+    },
     '&:hover': {
       background: '#E4B200'
     }
@@ -74,8 +89,14 @@ export const useStyles = makeStyles((theme) => ({
     bottom: '12%',
     width: '320px',
     height: '600px',
+    zIndex: 1200,
     background: themeMode ? 'white' : '#232323',
-    boxShadow: '0px 5px 8px rgba(0, 0, 0, 0.25)'
+    boxShadow: '0px 5px 8px rgba(0, 0, 0, 0.25)',
+    '@media (max-width: 768px)': {
+      width: '100%',
+      right: 0,
+      top: '40px'
+    }
   }),
   cancelIcon: {
     position: 'absolute',
@@ -143,7 +164,10 @@ export const useStyles = makeStyles((theme) => ({
   },
   icon: {
     color: theme.palette.white,
-    fontSize: '35px'
+    fontSize: '35px',
+    '@media (max-width: 768px)': {
+      fontSize: '25px !important'
+    }
   },
   activeMsgWrapper: {
     height: '65%',

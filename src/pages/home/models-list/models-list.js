@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 import { useStyles } from './models-list.style';
-import { useStyles as useModelItemStyles } from '../../../components/model-item/model-item.style';
 import { getAllModels } from '../../../redux/model/model.actions';
 import ClassicButton from '../../../components/classic-button';
 import ModelItem from '../../../components/model-item';
 import { HOME_BUTTONS } from '../../../translations/homepage.translations';
-import { UNIQUE_MODEL_IMAGE_LINK } from '../../../configs';
 import Loader from '../../../components/loader';
 
 const ModelsList = () => {
@@ -22,7 +19,6 @@ const ModelsList = () => {
   const [isModelsVisible, setIsModelsVisible] = useState(false);
 
   const styles = useStyles({ isModelsVisible, modelsCount: models.length });
-  const modelItemStyles = useModelItemStyles();
 
   useEffect(() => {
     dispatch(getAllModels());
@@ -42,16 +38,6 @@ const ModelsList = () => {
         {models.map((model) => (
           <ModelItem key={model._id} model={model} />
         ))}
-        <Link className={modelItemStyles.modelItem} to='/unique'>
-          <div className={modelItemStyles.modelItemTitle}>Unique</div>
-          <div
-            className={modelItemStyles.modelItemImage}
-            style={{
-              background: `url(${UNIQUE_MODEL_IMAGE_LINK}) center center`,
-              backgroundSize: 'cover'
-            }}
-          />
-        </Link>
       </div>
       <ClassicButton
         buttonStyle={isModelsVisible ? 'classic' : 'inverse'}

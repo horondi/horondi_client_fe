@@ -28,7 +28,7 @@ export const useStyles = makeStyles((theme) => ({
   radioBtnWrapper: {
     paddingBottom: 20,
     '@media (max-width: 813px)': {
-      marginLeft: 100
+      marginLeft: 40
     }
   },
   btnCreateOrder: {

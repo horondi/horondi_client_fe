@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import TextField from '@material-ui/core/TextField';
-
+import clsx from 'clsx';
 import { useStyles } from './search-bar.styles';
 import { setSearchFilter, getFiltredProducts } from '../../redux/products/products.actions';
 import { setSearchBarVisibility } from '../../redux/search-bar/search-bar.actions';
@@ -30,14 +30,23 @@ const SearchBar = ({ fromSideBar }) => {
       );
     }
   };
-
+  const [sticky, setSticky] = useState(false);
+  const stickySearch = clsx({
+    [styles.root]: true,
+    [styles.sticky]: sticky
+  });
+  useLayoutEffect(() => {
+    window.addEventListener('scroll', () => {
+      window.scrollY > 50 ? setSticky(true) : setSticky(false);
+    });
+  }, []);
   const handleOnBlur = () => {
     setTimeout(() => dispatch(setSearchBarVisibility(false)), 100);
   };
 
   return (
     <TextField
-      className={styles.root}
+      className={stickySearch}
       label={SEARCH_TEXT[language].value}
       onChange={handleSearch}
       onBlur={handleOnBlur}

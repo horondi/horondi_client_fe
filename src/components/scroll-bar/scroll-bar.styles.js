@@ -9,16 +9,20 @@ export const scrollBarStyles = makeStyles(() => ({
     top: '50%',
     transform: 'translateY(-50%)',
     zIndex: 10,
+    '@media (max-width: 768px)': {
+      display: 'none'
+    },
     '&:before': {
       content: `''`,
       position: 'absolute',
       display: 'block',
-      height: '2px',
+      height: isDarkSection ? '3px' : '1px',
       width: '200px',
       top: '50%',
-      left: '-96px',
+      left: '-95px',
       backgroundColor: isDarkSection ? '#fff' : '#000',
-      transform: 'rotate(90deg)'
+      transform: 'rotate(90deg)',
+      border: '1px solid black'
     }
   }),
   scrollBarItem: ({ isDarkSection }) => ({
@@ -42,7 +46,9 @@ export const scrollBarStyles = makeStyles(() => ({
     color: isDarkSection ? '#fff' : '#000',
     textTransform: 'uppercase',
     textDecoration: 'underline',
-    display: 'none'
+    display: 'none',
+    backgroundColor: isDarkSection ? '#00000020' : '#ffffff80',
+    padding: '5px'
   }),
   sectionPoint: ({ isDarkSection }) => ({
     backgroundColor: isDarkSection ? '#fff' : '#000',

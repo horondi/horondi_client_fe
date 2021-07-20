@@ -30,7 +30,10 @@ export const useStyles = makeStyles(() => ({
     marginBottom: '3%'
   },
   dataInput: {
-    width: '80%'
+    width: '80%',
+    '@media (max-width: 768px)': {
+      width: '100%',
+    }
   },
   disabled: {
     border: '1px solid red'

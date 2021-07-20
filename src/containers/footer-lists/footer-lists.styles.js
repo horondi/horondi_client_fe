@@ -7,19 +7,26 @@ export const useStyles = makeStyles(() => ({
   cardBody: {
     flex: 1,
     padding: '25px',
+    '& h6':{
+      color: '#9d9d9d',
+      marginLeft:'10px'
+    },
     '@media screen and (max-width: 552px)': {
-      width: '50%'
+      width: '100%',
+      padding: '25px 25px 20px',
+      borderBottom:'1px solid #9d9d9d'
     }
   },
 
   cardTitle: {
     marginBottom: '10px',
-    '@media screen and (max-width: 552px)': {
-      textAlign: 'center'
-    }
+    '& h5':{
+      fontSize:'18px',
+      fontWeight:'600',
+    },
   },
   cardLink: {
-    color: '#ffffff',
+    color: '#9d9d9d',
     '&:hover': {
       color: '#ffffff'
     }

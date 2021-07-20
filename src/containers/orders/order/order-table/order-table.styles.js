@@ -4,7 +4,13 @@ export const useStyles = makeStyles((theme) => ({
   titleWrapper: {
     display: 'flex',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    '@media (max-width: 450px)': {
+      flexDirection: 'column',
+      ' & span': {
+        width: '100%'
+      }
+    }
   },
   cartActionButtons: {
     display: 'flex',
@@ -32,6 +38,9 @@ export const useStyles = makeStyles((theme) => ({
     '& >th': {
       padding: 8,
       textAlign: 'center'
+    },
+    '@media (max-width: 450px)': {
+      display: 'none'
     }
   },
   quantity: {

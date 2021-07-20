@@ -1,12 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
-import { IconButton as BurgerMenu } from '@material-ui/core';
-import MenuIcon from '@material-ui/icons/Menu';
 import { scrollBarStyles } from './scroll-bar.styles';
 import { SCROLL_BAR_DATA } from '../../configs';
 import Sidebar from '../../containers/sidebar';
-
 const ScrollBar = ({ homeRef }) => {
   const language = useSelector(({ Language }) => Language.language);
 
@@ -60,11 +56,6 @@ const ScrollBar = ({ homeRef }) => {
 
   return (
     <>
-      {window.scrollY >= 200 && (
-        <BurgerMenu className={styles.fixedBurgerMenu} onClick={() => setIsMenuOpen(true)}>
-          <MenuIcon />
-        </BurgerMenu>
-      )}
       <div className={styles.scrollBar}>
         {SCROLL_BAR_DATA.map((item) => (
           <a key={item.href} href={item.href} className={styles.scrollBarItem}>

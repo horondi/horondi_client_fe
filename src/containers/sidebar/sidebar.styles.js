@@ -8,7 +8,17 @@ export const useStyles = makeStyles((theme) => ({
       height: fromSideBar ? '100vh' : 'calc(100vh - 64px)',
       width: 'fit-content',
       minWidth: '300px',
-      maxWidth: '450px'
+      maxWidth: '450px',
+      '@media (max-width: 768px)': {
+        top: '40px',
+        height: fromSideBar ? '100vh' : 'calc(100vh - 40px)'
+      }
+    }
+  }),
+  sticky: ({ fromSideBar }) => ({
+    '& .MuiDrawer-paper': {
+      top: '40px',
+      height: fromSideBar ? '100vh' : 'calc(100vh - 40px)'
     }
   }),
   mainItem: {

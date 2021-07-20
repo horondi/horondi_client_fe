@@ -13,6 +13,13 @@ export const useStyles = makeStyles(() => ({
   cartIconWrapper: {
     display: 'flex',
     justifyContent: 'center',
-    width: '45px'
+    width: '45px',
+    '@media (max-width: 768px)': {
+      '& .MuiBadge-badge': {
+        minWidth: '15px',
+        height: '15px',
+        width: '15px'
+      }
+    }
   }
 }));
