@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import clsx from 'clsx';
@@ -26,14 +26,20 @@ const SliderHomePage = () => {
     language: Language.language
   }));
 
-  useMemo(() => {
-    images.items &&
-      images.items.forEach((item) => {
+  const items = images.items.filter((item) => item.show === true);
+
+  useEffect(() => {
+    items &&
+      items.forEach((item) => {
         getImage(item.images.large)
           .then((src) => setImage((prev) => [...prev, src]))
           .catch((badSrc) => setImage((prev) => [...prev, badSrc]));
       });
   }, [images]);
+
+  if (!items.length) {
+    items.push(images.items[0]);
+  }
 
   return (
     <div id='slider' data-section-style='light' className={styles.homeHeader}>
@@ -46,7 +52,7 @@ const SliderHomePage = () => {
         fillParent
         infinite
       >
-        {images.items.map((item, index) => (
+        {items.map((item, index) => (
           <div key={item._id} data-src={imagesLinks[index]}>
             <Link
               to={item.link || pathToMain}

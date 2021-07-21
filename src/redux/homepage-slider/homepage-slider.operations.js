@@ -9,6 +9,8 @@ const getAllSlides = async () => {
         images {
             large
         }
+        show
+        order
         link
         title {
             lang
