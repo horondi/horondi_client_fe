@@ -35,7 +35,8 @@
     "plugin:react/recommended"
   ],
   "rules": {
-    "semi": "off",
+    "semi": ["error", "always"],
+    "semi-style" : ["error", "last"],
     "no-var": "warn",
     "no-unused-vars": [
       1,
