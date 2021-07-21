@@ -31,6 +31,9 @@ jobs:
       - run: npm install
       - run: npm test -- -u
 
+      - name: The eslint checking
+        run: npm run lint:fix
+
       - name: fix code coverage paths
         run: |
           sed -i 's/\/home\/runner\/work\/horondi_client_fe\/horondi_client_fe\//\/github\/workspace\//g' test-report.xml
